@@ -3,91 +3,241 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0a12">
-<title>Mell Games — партнёрский гид по игровой платформе</title>
-<meta name="description" content="Mell Games — партнёрский информационный сайт об игровой платформе. Условия бонусов, FAQ, ответственная игра. 18+.">
+<meta name="theme-color" content="#08070d">
+<title>Mell Games — игровая платформа, слоты и бонусы</title>
+<meta name="description" content="Mell Games — гид по игровой платформе: слоты, бонусы, выплаты. Партнёрский сайт. 18+.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://mell-games.pro/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="Mell Games">
-<meta property="og:title" content="Mell Games — партнёрский гид по игровой платформе">
-<meta property="og:description" content="Партнёрский информационный сайт. Условия бонусов, FAQ, ответственная игра. 18+.">
-<meta property="og:url" content="https://mell-games.pro/">
-<link rel="icon" href="/favicon.ico">
-<link rel="stylesheet" href="/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Mell Games","url":"https://mell-games.pro"}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08070d;--bg2:#0f0d18;--panel:#141120;--panel2:#1b1730;--line:#2a2440;
+  --text:#ece9f7;--muted:#9a93b8;--accent:#8b5cf6;--accent2:#22d3ee;--gold:#f5c451;--pink:#ec4899;
+}
+html,body{background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(8,7,13,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6d3ff0);display:grid;place-items:center;font-size:18px}
+.brand-copy{font-size:18px;line-height:1}
+.brand-copy small{display:block;color:var(--accent2);font-size:11px;letter-spacing:2px;margin-top:2px}
+.topnav{display:flex;gap:6px;margin-left:20px}
+.topnav a{padding:8px 12px;border-radius:10px;font-size:14px;color:var(--muted);font-weight:600}
+.topnav a:hover,.topnav a.active{color:var(--text);background:var(--panel)}
+.top-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+.btn{padding:10px 16px;border-radius:10px;font-weight:700;font-size:14px;white-space:nowrap}
+.btn.dark{background:var(--panel2);border:1px solid var(--line)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#6d3ff0);color:#fff;box-shadow:0 6px 20px rgba(139,92,246,.35)}
+/* LAYOUT */
+.layout{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:20px;padding:20px}
+@media(max-width:960px){.layout{grid-template-columns:1fr;padding:12px}.topnav{display:none}}
+/* SIDEBAR */
+.sidebar{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;height:fit-content;position:sticky;top:76px}
+.online{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--bg2);border-radius:10px;font-size:13px;color:var(--muted);margin-bottom:12px}
+.online b{color:var(--text);display:flex;align-items:center;gap:6px}
+.online-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e}
+.side-menu{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:var(--muted);font-size:14px;font-weight:600}
+.side-link:hover{background:var(--panel2);color:var(--text)}
+.side-link .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.side-promo{margin-top:14px;display:block;padding:14px;border-radius:12px;background:linear-gradient(135deg,rgba(236,72,153,.2),rgba(139,92,246,.2));border:1px solid rgba(236,72,153,.4);font-size:13px;font-weight:700}
+.side-promo:hover{filter:brightness(1.1)}
+.sidebar .support{margin-top:14px;display:flex;gap:8px}
+.sidebar .support a{flex:1;text-align:center;padding:8px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);font-size:12px;font-weight:600;color:var(--muted)}
+/* MAIN */
+.main{min-width:0}
+/* HERO */
+.hero{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#1a1330,#0d0a1a 60%,#1a0d24);padding:44px 32px;margin-bottom:20px}
+.hero::before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 20% 20%,rgba(139,92,246,.35),transparent 40%),radial-gradient(circle at 80% 80%,rgba(34,211,238,.25),transparent 40%);z-index:0}
+.hero>*{position:relative;z-index:1}
+.hero .pill{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(245,196,81,.12);color:var(--gold);border:1px solid rgba(245,196,81,.35);font-size:12px;letter-spacing:1px;font-weight:700}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:16px 0 10px;max-width:720px}
+.hero p{color:var(--muted);max-width:620px;font-size:17px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.cta-btn{padding:14px 24px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6d3ff0);color:#fff;font-weight:800;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+.cta-btn:hover{filter:brightness(1.1)}
+.cta-soft{padding:14px 24px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-weight:700}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.stat .num{display:block;font-size:24px;font-weight:900;background:linear-gradient(135deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{color:var(--muted);font-size:12px;margin-top:4px;display:block}
+/* SECTIONS */
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:20px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.section-head h2{font-size:20px}
+.section-head a{color:var(--accent2);font-size:13px;font-weight:700}
+/* SLOT GRID */
+.slot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.slot{background:var(--panel2);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.2s;display:block}
+.slot:hover{transform:translateY(-3px);border-color:var(--accent)}
+.slot-img{aspect-ratio:1/1;background:linear-gradient(135deg,#221a3a,#15112a);position:relative;overflow:hidden}
+.slot-img img{width:100%;height:100%;object-fit:cover}
+.slot-play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.35);opacity:0;transition:.2s}
+.slot:hover .slot-play{opacity:1}
+.slot-play span{width:52px;height:52px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:20px;color:#fff}
+.slot-info{padding:10px 12px}
+.slot-title{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot-prov{font-size:12px;color:var(--muted);margin-top:2px}
+/* PROVIDERS */
+.prov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.prov{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;place-items:center;min-height:72px;font-weight:700;color:var(--muted);font-size:13px}
+/* TABLE */
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top}
+th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+/* FAQ */
+details{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700;font-size:15px}
+details p{margin-top:10px;color:var(--muted);font-size:14px}
+/* CTA BLOCK */
+.cta-block{background:linear-gradient(135deg,rgba(139,92,246,.2),rgba(34,211,238,.12));border:1px solid rgba(139,92,246,.4);border-radius:18px;padding:28px;text-align:center;margin-bottom:20px}
+.cta-block h2{font-size:24px;margin-bottom:10px}
+.cta-block p{color:var(--muted);margin-bottom:18px;max-width:520px;margin-left:auto;margin-right:auto}
+/* RG */
+.rg{background:rgba(245,196,81,.08);border:1px solid rgba(245,196,81,.3);border-radius:12px;padding:14px 16px;font-size:13px;color:#e7d9b0;margin-bottom:20px}
+/* FOOTER */
+.footer{border-top:1px solid var(--line);background:#060509;padding:32px 20px 20px;margin-top:20px}
+.footer-inner{max-width:1320px;margin:0 auto;display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.footer-logo{font-weight:900;letter-spacing:.5px;margin-bottom:8px}
+.footer p{color:var(--muted);font-size:13px;max-width:400px}
+.footer-links{display:flex;gap:32px;flex-wrap:wrap;margin-left:auto;font-size:14px}
+.footer-links b{display:block;margin-bottom:8px;font-size:13px;color:var(--text)}
+.footer-links a{display:block;color:var(--muted);padding:2px 0}
+.footer-links a:hover{color:var(--text)}
+.age{font-weight:900;font-size:18px;color:var(--gold);border:2px solid var(--gold);border-radius:50%;width:52px;height:52px;display:grid;place-items:center}
+.footer-bottom{max-width:1320px;margin:20px auto 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center}
+</style>
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <a class="brand" href="/">MELL<span>GAMES</span></a>
+    <a class="brand" href="/">
+      <span class="brand-mark">M</span>
+      <div class="brand-copy">MELL<small>GAMES</small></div>
+    </a>
     <nav class="topnav">
-      <a href="/">Главная</a>
-      <a href="/bonuses.html">Бонусы</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/responsible.html">Ответственная игра</a>
+      <a class="active" href="/">Казино</a>
+      <a href="/slots/">Слоты</a>
+      <a href="/bonuses/">Бонусы</a>
+      <a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Касса</a>
     </nav>
-    <a class="btn primary" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Перейти на платформу</a>
+    <div class="top-actions">
+      <a class="btn dark" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Вход</a>
+      <a class="btn primary" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Регистрация</a>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
-  <section class="hero">
-    <span class="badge">ПАРТНЁРСКИЙ САЙТ · 18+</span>
-    <h1>Mell Games — гид по игровой платформе</h1>
-    <p class="lead">Это независимый партнёрский ресурс. Здесь — понятные условия бонусов, ответы на частые вопросы и напоминание об ответственной игре. Мы не оператор и не «официальный сайт» — мы помогаем разобраться перед регистрацией.</p>
-    <div class="cta-row">
-      <a class="cta-btn" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Перейти на платформу</a>
-      <a class="cta-soft" href="/bonuses.html">Условия бонусов</a>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="online"><span>Игроков онлайн</span><b><span class="online-dot"></span>1 658</b></div>
+    <nav class="side-menu">
+      <a class="side-link" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank"><span class="dot"></span>Слоты</a>
+      <a class="side-link" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank"><span class="dot" style="background:var(--gold)"></span>Демо</a>
+      <a class="side-link" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank"><span class="dot" style="background:var(--accent2)"></span>Бонусы</a>
+      <a class="side-link" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank"><span class="dot" style="background:var(--pink)"></span>Промокоды</a>
+      <a class="side-link" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank"><span class="dot" style="background:#3b82f6"></span>Выплаты</a>
+      <a class="side-link" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank"><span class="dot" style="background:#22c55e"></span>Поддержка</a>
+    </nav>
+    <a class="side-promo" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Ежедневные бонусы и награды →</a>
+    <div class="support">
+      <a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Чат</a>
+      <a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Telegram</a>
     </div>
-  </section>
+  </aside>
 
-  <section class="grid grid-3">
-    <div class="stat"><span class="num">18+</span><span class="lbl">Только для взрослых</span></div>
-    <div class="stat"><span class="num">×30</span><span class="lbl">Типовой вейджер (уточняйте)</span></div>
-    <div class="stat"><span class="num">300 ₽</span><span class="lbl">Мин. депозит (уточняйте)</span></div>
-    <div class="stat"><span class="num">24/7</span><span class="lbl">Поддержка оператора</span></div>
-  </section>
+  <main class="main">
+    <section class="hero">
+      <span class="pill">ПАРТНЁРСКИЙ САЙТ · 18+</span>
+      <h1>Игровая платформа: слоты, бонусы, турниры</h1>
+      <p>Гид по платформе: актуальные условия бонусов, популярные слоты и ответы на вопросы. Мы не оператор — переход по кнопкам ведёт на сайт партнёра.</p>
+      <div class="hero-cta">
+        <a class="cta-btn" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Перейти на платформу</a>
+        <a class="cta-soft" href="/bonuses/">Условия бонусов</a>
+      </div>
+    </section>
 
-  <section class="card">
-    <h2>Как это работает</h2>
-    <ol class="steps">
-      <li>Переходите по партнёрской ссылке на платформу оператора.</li>
-      <li>Регистрируетесь и знакомитесь с актуальными условиями бонусов.</li>
-      <li>Проверяете вейджер и лимиты вывода <em>до</em> активации бонуса.</li>
-      <li>Играете только на сумму, которую готовы потерять.</li>
-    </ol>
-    <p class="muted">Ссылки на этом сайте — партнёрские. Мы можем получать вознаграждение за регистрации. Это не влияет на условия для вас.</p>
-  </section>
+    <section class="stats">
+      <div class="stat"><span class="num">18+</span><span class="lbl">Только для взрослых</span></div>
+      <div class="stat"><span class="num">24/7</span><span class="lbl">Поддержка оператора</span></div>
+      <div class="stat"><span class="num">×30</span><span class="lbl">Типовой вейджер</span></div>
+      <div class="stat"><span class="num">300 ₽</span><span class="lbl">Мин. депозит</span></div>
+    </section>
 
-  <section class="card">
-    <h2>Что важно знать до регистрации</h2>
-    <table>
-      <thead><tr><th>Параметр</th><th>Что уточнить у оператора</th></tr></thead>
-      <tbody>
-        <tr><td>Бонус на депозит</td><td>Процент, максимальная сумма, срок действия</td></tr>
-        <tr><td>Фриспины</td><td>Провайдер, номинал, срок, вейджер на выигрыш</td></tr>
-        <tr><td>Вейджер</td><td>×сколько, на какие игры распространяется</td></tr>
-        <tr><td>Лимит вывода с бонуса</td><td>Максимальная сумма, которую можно вывести</td></tr>
-        <tr><td>Верификация</td><td>Какие документы нужны и когда</td></tr>
-      </tbody>
-    </table>
-    <p class="rg-block"><strong>18+</strong> · Азартные игры не являются способом заработка или решения финансовых проблем. Играйте ответственно.</p>
-  </section>
+    <section class="panel">
+      <div class="section-head"><h2>Популярные слоты</h2><a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Смотреть все →</a></div>
+      <div class="slot-grid">
+        <a class="slot" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">
+          <div class="slot-img"><img src="/assets/slots/gates-of-olympus-1000.jpg" alt="Gates of Olympus 1000" loading="lazy"><div class="slot-play"><span>▶</span></div></div>
+          <div class="slot-info"><div class="slot-title">Gates of Olympus 1000</div><div class="slot-prov">Pragmatic Play</div></div>
+        </a>
+        <a class="slot" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">
+          <div class="slot-img"><img src="/assets/slots/sweet-bonanza-1000.jpg" alt="Sweet Bonanza 1000" loading="lazy"><div class="slot-play"><span>▶</span></div></div>
+          <div class="slot-info"><div class="slot-title">Sweet Bonanza 1000</div><div class="slot-prov">Pragmatic Play</div></div>
+        </a>
+        <a class="slot" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">
+          <div class="slot-img"><img src="/assets/slots/big-bass-bonanza-1000.webp" alt="Big Bass Bonanza" loading="lazy"><div class="slot-play"><span>▶</span></div></div>
+          <div class="slot-info"><div class="slot-title">Big Bass Bonanza</div><div class="slot-prov">Pragmatic Play</div></div>
+        </a>
+        <a class="slot" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">
+          <div class="slot-img"><img src="/assets/slots/wanted-dead-or-a-wild.jpg" alt="Wanted Dead Or a Wild" loading="lazy"><div class="slot-play"><span>▶</span></div></div>
+          <div class="slot-info"><div class="slot-title">Wanted Dead Or a Wild</div><div class="slot-prov">Hacksaw Gaming</div></div>
+        </a>
+        <a class="slot" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">
+          <div class="slot-img"><img src="/assets/slots/sugar-rush-1000.jpg" alt="Sugar Rush 1000" loading="lazy"><div class="slot-play"><span>▶</span></div></div>
+          <div class="slot-info"><div class="slot-title">Sugar Rush 1000</div><div class="slot-prov">Pragmatic Play</div></div>
+        </a>
+        <a class="slot" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">
+          <div class="slot-img"><img src="/assets/slots/le-bandit.webp" alt="Le Bandit" loading="lazy"><div class="slot-play"><span>▶</span></div></div>
+          <div class="slot-info"><div class="slot-title">Le Bandit</div><div class="slot-prov">Hacksaw Gaming</div></div>
+        </a>
+      </div>
+    </section>
 
-  <section class="card">
-    <h2>FAQ</h2>
-    <details><summary>Это официальный сайт платформы?</summary>
-      <p>Нет. Это независимый партнёрский информационный ресурс. Официальные условия, лицензия и правила — у оператора по ссылке.</p></details>
-    <details><summary>Вы гарантируете выигрыш?</summary>
-      <p>Нет. Никто не может гарантировать выигрыш в азартных играх. Результат случаен, а математическое ожидание для игрока отрицательное.</p></details>
-    <details><summary>Куда ведут кнопки на сайте?</summary>
-      <p>На партнёрскую ссылку оператора: <code>https://mell1497.life/?p=hkmq</code>. Переход помечен как sponsored.</p></details>
-    <details><summary>Что делать при признаках зависимости?</summary>
-      <p>Обратитесь к специалисту. На странице <a href="/responsible.html">Ответственная игра</a> — краткий чек-лист и куда обращаться.</p></details>
-  </section>
-</main>
+    <section class="panel">
+      <div class="section-head"><h2>Провайдеры</h2><a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Все →</a></div>
+      <div class="prov-grid">
+        <div class="prov">Pragmatic Play</div><div class="prov">Hacksaw</div><div class="prov">PG Soft</div><div class="prov">NoLimit City</div>
+        <div class="prov">Relax Gaming</div><div class="prov">Play'n GO</div><div class="prov">3 Oaks</div><div class="prov">BGaming</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><h2>Что проверить перед регистрацией</h2></div>
+      <table>
+        <thead><tr><th>Параметр</th><th>Что уточнить у оператора</th></tr></thead>
+        <tbody>
+          <tr><td>Бонус на депозит</td><td>Процент, максимальная сумма, срок действия</td></tr>
+          <tr><td>Фриспины</td><td>Провайдер, номинал, вейджер на выигрыш</td></tr>
+          <tr><td>Вейджер</td><td>×сколько, на какие игры распространяется</td></tr>
+          <tr><td>Лимит вывода</td><td>Максимум, который можно вывести с бонуса</td></tr>
+          <tr><td>Верификация</td><td>Какие документы и когда</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><h2>FAQ</h2></div>
+      <details><summary>Это официальный сайт?</summary><p>Нет. Это независимый партнёрский информационный ресурс. Официальные условия, лицензия и правила — у оператора по ссылке.</p></details>
+      <details><summary>Вы гарантируете выигрыш?</summary><p>Нет. Результат случаен, математическое ожидание для игрока отрицательное.</p></details>
+      <details><summary>Куда ведут кнопки?</summary><p>На партнёрскую ссылку оператора: <code>https://mell1497.life/?p=hkmq</code>.</p></details>
+      <details><summary>Что делать при признаках зависимости?</summary><p>Обратитесь к специалисту. Играйте ответственно.</p></details>
+    </section>
+
+    <section class="cta-block">
+      <h2>Готовы перейти на платформу?</h2>
+      <p>Актуальные условия бонусов и правила — на стороне оператора.</p>
+      <a class="cta-btn" href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Перейти на платформу</a>
+    </section>
+
+    <div class="rg"><strong>18+</strong> · Азартные игры не являются способом заработка или решения финансовых проблем. Играйте ответственно.</div>
+  </main>
+</div>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -96,10 +246,9 @@
       <p>Партнёрский информационный сайт. Не оператор азартных игр. 18+.</p>
     </div>
     <div class="footer-links">
-      <a href="/bonuses.html">Бонусы</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/responsible.html">Ответственная игра</a>
-      <a href="/privacy.html">Конфиденциальность</a>
+      <div><b>Платформа</b><a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Слоты</a><a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Бонусы</a><a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Выплаты</a></div>
+      <div><b>Информация</b><a href="/faq.html">FAQ</a><a href="/responsible.html">Ответственная игра</a><a href="/privacy.html">Конфиденциальность</a></div>
+      <div><b>Помощь</b><a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Поддержка</a><a href="https://mell1497.life/?p=hkmq" rel="nofollow sponsored noopener" target="_blank">Telegram</a></div>
     </div>
     <div class="age">18+</div>
   </div>
